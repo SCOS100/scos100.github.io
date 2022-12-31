@@ -1,1 +1,1 @@
-# scos100.github.io
+# Welcome to SCOS 100 Reposity!
