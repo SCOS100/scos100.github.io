@@ -2,17 +2,17 @@ body {
     background-color: black;
 }
 .Buttons_upper {
-    font: larger;
+    font: large;
     color: white;
     border: 2px solid white;
     border-radius: 5px;
     padding: 5px;
+    text-decoration-line: none;
 }
 .Buttons_div {
     border: 2px solid white;
     border-radius: 5px;
     padding: 5px;
-    text-decoration-line: none;
 }
 p {
     color: white;
