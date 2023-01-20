@@ -1,6 +1,10 @@
 body {
     background-color: black;
 }
+.Img {
+  width: 40%;
+  
+} 
 .Buttons_upper {
     font: large;
     color: white;
@@ -13,6 +17,27 @@ body {
     border: 2px solid white;
     border-radius: 5px;
     padding: 5px;
+}
+.News_div {
+  max-height: 130px;
+  max-width: 90%;
+  width: 90%;
+  overflow-x: none;
+  overflow-y: scroll;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex: 1;
+}
+.News_div_in {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100px;
+}
+.Login {
+  color: white;
 }
 p {
     color: white;
