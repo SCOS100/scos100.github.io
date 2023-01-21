@@ -1,5 +1,7 @@
+
 $(document).ready(function() {
-  $("#button").click(function() {
-    $(this).hide()
+  $(".Buttons_div").hide()
+  $("#ButtHider").click(function() {
+    $(".Buttons_div").fadeToggle(1000)
   })
 })
