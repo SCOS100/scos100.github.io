@@ -1,11 +1,8 @@
-function user_login(username, password) {
-  document.cookie = user = username
-  document.cookie = pass = password
+function user_login() {
+  document.cookie = user = document.getElementById("username").innerText
+  document.cookie = pass = document.getElementById("password").innerText
 }
 function user_logout() {
   document.cookie = user = null
   document.cookie = pass = null
-}
-function set_cust(name, value) {
-  document.cookie = name = value
 }

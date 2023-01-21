@@ -28,13 +28,13 @@ body {
   border-radius: 5px;
   padding: 5px;
   display: flex;
-  flex: 1;
+  flex: 1rem
 }
 .News_div_in {
   border: 2px solid white;
   border-radius: 5px;
   padding: 5px;
-  width: 100px;
+  width: 200px;
 }
 .Login {
   color: white;

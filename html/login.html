@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SCOS Official Site</title>
+    <title>SCOS - Login</title>
     <link rel="shortcut icon" href="SCOS.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
   <script type="module" src="script/firebase.js"></script>
@@ -35,29 +36,27 @@
           </ul>
         </div>
      </div>
-    </nav>
-    <div class="gap-4">
-      <p></p>
-      <p></p>
-    </div>
-    <h1>Welcome, Tester!</h1>
-    <h1>Today news</h1>
-    <div class="News_div gap-1" id="out">
-      <div class="News_div_in" id="in">
-        <h2><a src="admin.html">The start.</a></h2>
-      </div>
-      <div class="News_div_in" id="in">
-        <h2>Another news test</h2>
-      </div>
-      <div class="News_div_in" id="in">
-        <h2>Another one</h2>
-      </div>
-      <div class="News_div_in" id="in">
-        <h2>Another one</h2>
-      </div
-      <div class="News_div_in" id="in">
-        <h2>Another one</h2>
-      </div>
-    </div>
+    </nav><br></br>
+    <br></br>
+    <form action="login.php">
+  <div class="mt-3 mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="pwd" class="form-label">Password:</label>
+    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+  </div>
+  <div class="form-check mb-3">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" name="remember"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br></br>
+    <div class="alert alert-info fade show">
+    <strong>Wait!</strong> Login is not still implemented, so it might have bugs!
+  </div>
 </body>
 </html>

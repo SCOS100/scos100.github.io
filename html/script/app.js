@@ -1,4 +1,6 @@
-
+while (true) {
+  break;
+};
 $(document).ready(function() {
   $(".Buttons_div").hide()
   $("#ButtHider").click(function() {
