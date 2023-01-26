@@ -1,12 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-storage.js"
+import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-storage.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyD6fR_yuPfgcFKSApSw_2ce-HpbsZaCtYk",
   authDomain: "scos-web-git.firebaseapp.com",
@@ -16,11 +14,11 @@ const firebaseConfig = {
   appId: "1:370134697674:web:baf7ee28ed984b2c159633",
   measurementId: "G-ZR0VNTHPQP"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const storage = getStorage(app)
+const auth = getAuth(app)
 function storageUpload(namep) {
    // Create the file metadata
    /** @type {any} */
@@ -68,3 +66,82 @@ function storageUpload(namep) {
      }
    );
 } 
+function storageGet(namep) {
+  const starsRef = ref(storage, 'images/stars.jpg');
+   // Get the download URL
+   getDownloadURL(starsRef)
+     .then((url) => {
+    // Insert url into an <img> tag to "download"
+  })
+     .catch((error) => {
+    // A full list of error codes is available at
+    // https://firebase.google.com/docs/storage/web/handle-errors
+    switch (error.code) {
+      case 'storage/object-not-found':
+        // File doesn't exist
+        break;
+      case 'storage/unauthorized':
+        // User doesn't have permission to access the object
+        break;
+      case 'storage/canceled':
+        // User canceled the upload
+        break;
+
+      // ...
+
+      case 'storage/unknown':
+        // Unknown error occurred, inspect the server response
+        break;
+    }
+  });
+}
+function storageDelete(namep) {
+  // Create a reference to the file to delete
+  const desertRef = ref(storage, namep);
+
+  // Delete the file
+  deleteObject(desertRef).then(() => {
+   // File deleted successfully
+   }).catch((error) => {
+   // Uh-oh, an error occurred!
+  });
+}
+function authCreate(email, password) {
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    console.log("User was created");
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    console.log("User was not created");
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+}
+function authLogin(email, password) {
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    console.log("Logged in successfully");
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    console.log("Logged in insuccessfully");
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+}
+function authLogout() {
+  signOut(auth).then(() => {
+    console.log("Logged out successfully");
+  // Sign-out successful.
+  }).catch((error) => {
+    console.log("Logged out insuccessfully");
+    console.log("An error occurred!");
+  // An error happened.
+  });
+}
