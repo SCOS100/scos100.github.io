@@ -2,11 +2,11 @@ body {
     background-color: black;
 }
 .Img {
-  width: 40%;
+    width: 40%;
   
 } 
 .Buttons_upper {
-    font: large;
+    font-size: large;
     color: white;
     border: 2px solid white;
     border-radius: 5px;
@@ -47,4 +47,7 @@ h1 {
 }
 h2 {
     color: white;
+}
+a {
+  text-decoration-line: none;
 }
