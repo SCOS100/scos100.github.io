@@ -145,3 +145,4 @@ function authLogout() {
   // An error happened.
   });
 }
+export { initializeApp, getAnalytics, getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, firebaseConfig, app, analytics, storage, auth }
